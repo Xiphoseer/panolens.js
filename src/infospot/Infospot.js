@@ -59,14 +59,13 @@ function Infospot ( scale = 300, imageSrc, animated ) {
 
         if ( !this.material ) { return; }
 
-        const ratio = texture.image.width / texture.image.height;
-        const textureScale = new THREE.Vector3();
-
         texture.image.width = texture.image.naturalWidth || 64;
         texture.image.height = texture.image.naturalHeight || 64;
-
+        
+        const ratio = texture.image.width / texture.image.height;
         this.scale.set( ratio * scale, scale, 1 );
 
+        const textureScale = new THREE.Vector3();
         textureScale.copy( this.scale );
 
         this.scaleUpAnimation = new TWEEN.Tween( this.scale )

@@ -2,6 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import json from 'rollup-plugin-json';
 import commonjs from 'rollup-plugin-commonjs'
 import inject from 'rollup-plugin-inject';
+import { terser } from "rollup-plugin-terser";
 
 export default {
     external: ['three'],
@@ -10,7 +11,7 @@ export default {
         {
             format: 'umd',
             name: 'PANOLENS',
-            file: 'build/panolens.js',
+            file: 'build/panolens.min.js',
             indent: '\t',
             globals: {three: 'THREE'}
         },
@@ -33,6 +34,7 @@ export default {
         }),
         inject({
             THREE: [ 'three', '*' ]
-        })
+        }),
+        terser()
     ]
 };
