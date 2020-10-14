@@ -495,8 +495,7 @@ Panorama.prototype = Object.assign( Object.create( THREE.Mesh.prototype ), {
                  */
                 this.dispatchEvent( { type: 'enter-complete' } );
 
-            }.bind ( this ) )
-            .start();
+            }.bind ( this ) );
 
         this.leaveTransition = new TWEEN.Tween( this )
             .easing( TWEEN.Easing.Quartic.Out );
