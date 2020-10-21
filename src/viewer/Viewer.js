@@ -2103,7 +2103,7 @@ Viewer.prototype = Object.assign( Object.create( THREE.EventDispatcher.prototype
 
     /**
      * Append custom control item to existing control bar
-     * @param {object} [option={}] - Style object to overwirte default element style. It takes 'style', 'onTap' and 'group' properties.
+     * @param {object} [option={}] - Style object to overwrite default element style. It takes 'style', 'onTap' and 'group' properties.
      * @memberOf Viewer
      * @instance
      */
